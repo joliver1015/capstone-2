@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ game.name }}{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="game-title-container">
+        <h5>{{ game.title }}</h5>  
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 info-panel">
+                <div class="cover-art-container">
+                    <img src="{{ game.cover_art }}">
+                </div>
+                {% if g.user %}    
+                    <div class="form-container">
+                        <div class="score-title">
+                            <h6>Edit Score</h6>
+                        </div>
+                        <div class="score-form">
+                            <form action="/games/{{ game.game_id }}" method="POST">
+                                <div class="score-input">
+                                    <span class="info-label">
+                                        Your Score:
+                                    </span>
+                                    {{ form.score }}
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                            </form>
+                            <span>Your current score:</span>
+                            <p>{{ user_rating.score }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            <br>
+            <div class="info-container">
+                <div class="info-title">
+                    <h6>Information</h6>
+                </div>
+                <div class="info-section">
+                    <span class="text-dark">
+                        Released:
+                    </span>
+                    {{ game.release_date }}
+                </div>
+                <div class="info-section">
+                    <span class="text-dark">
+                        Genres:
+                    </span>
+                    {% for genre in genres %}
+                        <a href="/genres/{{ genre.genre_id }}">{{ genre.genre_name }}</a>
+                    {% endfor %}
+                </div>
+                <div class="info-section">
+                    <span class="text-dark">
+                        Platforms:
+                    </span>
+                    {% for platform in platforms %}
+                        <a href="/platforms/{{ platform.platform_id }}">{{ platform.platform_name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <br>
+            <div class="stats-container">
+                <div class="stats-title">
+                    <h6>Statistics:</h6>
+                </div>
+                <div class="stats-section">
+                  <span class="text-dark">
+                    Score:
+                    </span>
+                     {{ avg_score }}
+                </div>
+                <div class="stats-section">
+                    <span class="text-dark">
+                        Ranked:
+                    </span>
+                    {{ ranking }}
+                </div>
+                <div>  
+                </div>
+            </div>
+        </div>
+        <div class="col-9 main-panel">
+            <div class="stats-block">
+                <div class="score">  
+                    <h4>Score:</h4>
+                    <h5>{{ avg_score }}</h5>
+                    <p> From {{ num_users }} users</p>   
+                </div>
+                <div class="numbers">
+                    <div class="ranking">
+                        <h4>Ranking:</h4>
+                        <h5>#{{ ranking }}</h5>
+                    </div>
+                </div>  
+            </div>
+            <div class="about-section">
+                <div class="about-title">
+                    <h5>About:</h5>
+                </div>
+                <div class="description-container">
+                    <p>{{ game.description }}</p>
+                </div>
+                <div class="official-website-container">
+                    <h5>More Info:</h5>
+                    <p><a href="{{ game.official_website }}">Official Website</a></p>
+                </div>
+                <div class="shop-links-container">
+                    <h5>Where to Buy:</h5>
+                        {% if game.steam_link %}
+                            <a class="shop-link" href="{{ game.steam_link }}">Steam</a>
+                        {% endif %}
+                        {% if game.amazon_link %}
+                            <a class="shop-link" href="{{ game.amazon_link }}">Amazon</a>
+                        {% endif %}
+                        {% if game.gamestop_link %}
+                            <a class="shop-link" href="{{ game.gamestop_link }}">Gamestop</a>
+                        {% endif %}
+                        {% if game.bestbuy_link %}
+                            <a class="shop-link" href="{{ game.bestbuy_link }}">Best Buy</a>
+                        {% endif %}   
+                    </div>
+                </div>
+                <div class="review-section">
+                    <div class="review-section-title">
+                        <h5>Reviews:</h5>
+                    </div>
+                    <div class="reviews">
+                        {% if g.user %}
+                            {% if user_review %}
+                                <div class="user-review">
+                                    <div class="review-title">
+                                        <h4>{{ user_review.title }}</h4>
+                                        <p class="author"> By: {{ user_review.author }}</p>
+                                        <a class="btn btn-primary review-edit" href="/games/{{ game.game_id }}/reviews/{{ user_review.review_id }}/edit">Edit Review</a>
+                                        <a class="btn btn-danger review-delete" href="/games/{{ game.game_id }}/reviews/{{ user_review.review_id }}/delete" method="POST">Delete Review</a>
+                                    </div>
+                                    <div class="review-body">
+                                        <p>{{ user_review.body }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if not user_review %}
+                                <a class="btn btn-primary" href="/games/{{ game.game_id }}/reviews/new">New Review</a>
+                            {% endif %}
+                        {% endif %}
+                        <ul class="list-group">
+                            {% for review in reviews %}
+                            <li class="list-group-item">
+                                <div class="review-title">
+                                    <h4 class=>{{ review.title }}</h4>
+                                    <p class="author"> By: {{ review.author }}</p>
+                                </div>
+                                <div class="review-body">
+                                    <p class="review-body">
+                                        {{review.body}}
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+    
+{% endblock %}

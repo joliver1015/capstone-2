@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ platform.platform_name }}{% endblock %}
+
+{% block content %}
+    <div>
+        <div class=" gamelist-title">
+            <h5>{{ platform.platform_name }}</h5>
+        </div>
+        <div class="sub-title">
+            <h4>Showing {{ games_count }} games</h4>
+        </div>
+        <div>
+            <ul class="list-group">
+                {% for game in platform.games %}
+                    <li class="list-group-item"><a href="/games/{{ game.game_id }}">{{ game.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

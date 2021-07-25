@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="review-list-title">
+        <h5> {{ user.username }}'s Review List</h5>
+    </div>
+    <div class="review-list-container">
+        <ul class="list-group">
+            {% for review in review_list %}
+                <li class="list-group-item">
+                    <div class="review-title">
+                        <h5>{{ review.review.title }}</h5>
+                        <h6> For : <a href="/games/{{ review.game.game_id }}">{{ review.game.title }}</a></h6>
+                    </div>
+                    <div class="review-body">
+                        <p>{{ review.review.body }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

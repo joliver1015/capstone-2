@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="list-title">
+        <h5>{{ user.username }}'s Video Game List</h5>
+    </div>
+    <div class="list">
+        <div>
+            <ul class="list-group">
+                {% for game in games_list %}
+                    <li class="list-group-item vglist">
+                        <div class="game">
+                            <p><a href="/games/{{ game.game.game_id }}">{{ game.game.title }}</a></p>
+                        </div>
+                        <div class="game-score">
+                            <p>Score: {{ game.score }}</p>
+                        </div>
+                    </li> 
+                {% endfor %}
+            </ul>
+        </div>  
+    </div>
+</div>
+
+{% endblock %}

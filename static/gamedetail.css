@@ -1,0 +1,174 @@
+.page-container {
+    display: grid;
+}
+
+.stats-block {
+    margin-top: 10px;
+    background-color: lightgrey;
+    display:inline-flex;
+}
+
+.score  {
+    padding-right: 10px;
+    margin: 10px;
+    border-right: 2px solid black;
+    text-align: center;
+}
+
+.numbers {
+    margin: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.info-panel {
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 2px;
+    margin:auto;
+}
+
+.main-panel {
+    border-right: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 2px;
+    
+}
+
+.about-section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.about-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.about-title h5 {
+    border-bottom: 2 px solid lightgray;
+}
+
+.official-website-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.official-website-container h5 {
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 2px;
+}
+
+.game-title-container {
+    background-color: lightgrey;
+    padding-bottom: 1px;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.cover-art-container {
+    padding-bottom: 3px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.score-title {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.score-form {
+    padding-top: 1px;
+}
+
+.score-form {
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.score-input {
+    margin: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+
+.shop-links-container {
+    margin-bottom: 5px;
+    
+}
+
+.shop-links-container h5 {
+    padding-bottom: 2px;
+    border-bottom: 2px solid lightgray;
+}
+
+.shop-links-container a {
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+.review-section-title h5 {
+    margin-top: 5px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid lightgray;
+}
+
+.review-title {
+    background-color: lightgrey;
+    border-bottom: 1px solid black;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.review-title p {
+    font-weight: bold;
+}
+
+.review-body {
+    padding-top: 5px;
+}
+
+.info-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.info-title {
+    border-bottom: 2px solid lightgray;
+}
+
+.info-section {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.info-section span {
+    margin-right: 2px;
+    font-weight: bold;
+}
+
+.stats-container {
+    margin-bottom: 5px;
+}
+
+.stats-title {
+    margin-bottom: 5px;
+}
+
+.stats-title h6 {
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 5px;
+}
+
+.stats-section {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.stats-section span {
+    font-weight: bold;
+    margin-right: 2px;
+}

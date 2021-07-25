@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}New Review{% endblock %}
+
+{% block content %}
+<div>
+    <div class="review-form">
+        <div class="review-form-title">
+            <h4>New review for {{ game.title }}</h4>
+        </div>
+        <div>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                {% for field in form if field.widget.input_type != 'hidden' %}
+                    {% for error in field.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                    <div class="mb-3">
+                        {{ field(placeholder=field.label.text, class="form-control") }}
+                    </div>
+                
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

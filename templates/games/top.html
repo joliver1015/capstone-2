@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Top Games{% endblock %}
+
+{% block content %}
+<div>
+    <div class="title">
+        <h2>Top Games</h2>
+    </div>
+    <div>
+        <ol class="list-group">
+        {% for game in top_games %}
+            <li class="list-group-item"><a href="/games/{{ game.game_id }}">{{ game.title }}</a></li>
+        {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endblock %}

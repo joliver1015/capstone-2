@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <div class="announcements">
+                    <h5>MyGameList Announcements</h5>
+                    <p>No new announcements</p>
+                </div>
+                <div class="game-news">
+                    <h5>Video Game News</h5>
+                    <p>No news to show</p>
+                </div>
+                <div class="latest-reviews">
+                    <h5>Latest Reviews:</h5>
+                    {% for review in latest_reviews %}
+                    <li class="list-group-item">
+                        <div class="review-title">
+                            <h5>{{ review.review.title }}</h5>
+                            <h6> For : <a href="/games/{{ review.game.game_id }}">{{ review.game.title }}</a></h6>
+                            <h6> By: {{ review.review.author }}</h6>
+                        </div>
+                        <div class="review-body">
+                            <p>{{ review.review.body }}</p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="new-game-list">
+                    <h6>Recently Added Games</h6>
+                    <ul class="list-group">
+                        {% for game in new_games %}
+                        <li class="list-group-item">
+                            <div class="new-game-name">
+                                <a href="/games/{{ game.game_id }}">{{ game.title }}</a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <br>
+                <div class="top-games-list">
+                    <h6>Top Games:</h6>
+                    <ul class="list-group">
+                    {% for game in top_games %}
+                        <li class="list-group-item">
+                            <div class="new-game-name">
+                                <a href="/games/{{ game.game_id }}">{{ game.title }}</a>
+                            </div>
+                        </li>
+                    {% endfor %}    
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,87 @@
+.profile-title {
+    display: inline-flex;
+    background-color: lightgrey;
+    padding-left: 10px;
+    padding-top: 5px;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+
+.row {
+    border: 1px solid lightgrey;
+}
+
+.col-3 {
+    border-right: 1px solid lightgrey;
+}
+
+.profile-image-container {
+    border: 2px solid lightgrey;
+    height: 300px;
+    width: 200px;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.list-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.list-container h6 {
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 2px;
+}
+
+.stats-container {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.stats-container h6 {
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 2px;
+}
+
+.stats-container p {
+    font-weight: bold;
+}
+
+.stats-container span {
+    font-weight: normal;
+}
+
+.biography-container h5 {
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 5px;
+    
+}
+
+.stats-section-title {
+    margin-bottom: 5px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.games-played p {
+    font-weight: bold;
+}
+
+.games-played span {
+    font-weight: normal;
+}
+
+.mean-score p {
+    font-weight: bold;
+}
+
+.mean-score span {
+    font-weight: normal;
+}
+

@@ -1,0 +1,16 @@
+.list-title {
+    background-color: lightgray;
+    display: flex;
+    padding-left: 10px;
+    border-bottom: 2px solid black;
+    
+}
+
+
+
+
+
+.vglist {
+    display: inline-flex;
+    justify-content: space-between;
+}
